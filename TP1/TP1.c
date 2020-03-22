@@ -6,8 +6,8 @@
 
 GLuint idTexturaFundo,idTexturaLulinha;
 GLuint texturaAtual;
-float xTextura,yTextura,xPosicaoSprite,yPosicaoSprite;
-int ladoDir=1,ladoEsq=1,direita=0,frames=0,costas=1;
+float xTextura,yTextura,xPosicaoSprite,xVerticeSprite=160;
+int ladoDir=1,ladoEsq=1,direita=0,frames=0,costas=1,primeiraVez=1;
 
 GLuint carregaTextura(const char* arquivo) {
     GLuint idTextura = SOIL_load_OGL_texture(
@@ -44,48 +44,54 @@ void desenhaNave(){
     glBegin(GL_TRIANGLE_FAN);
         if (costas){
             glTexCoord2f(0.4, 0);
-            glVertex3f(160, 10,  0);
+            glVertex3f(xVerticeSprite, 10,  0);
+            xVerticeSprite+=80;
 
             glTexCoord2f(0.5, 0);
-            glVertex3f( 240, 10,  0);
+            glVertex3f( xVerticeSprite, 10,  0);
 
             glTexCoord2f(0.5,1);
-            glVertex3f( 240,  90,  0);
+            glVertex3f( xVerticeSprite,  90,  0);
+            xVerticeSprite-=80;
 
             glTexCoord2f(0.4, 1);
-            glVertex3f(160,  90,  0);
+            glVertex3f(xVerticeSprite,  90,  0);
         }
         else{
             if(!direita){
                 glTexCoord2f(xPosicaoSprite, 0);
-                glVertex3f(240, 10,  0);
-                xPosicaoSprite-=0.1;
+                glVertex3f(xVerticeSprite, 10,  0);
+                xPosicaoSprite+=0.1;
+                xVerticeSprite+=80;
 
                 glTexCoord2f(xPosicaoSprite, 0);
-                glVertex3f( 160, 10,  0);
+                glVertex3f( xVerticeSprite, 10,  0);
 
                 glTexCoord2f(xPosicaoSprite,1);
-                glVertex3f( 160,  90,  0);
-                xPosicaoSprite+=0.1;
+                glVertex3f( xVerticeSprite,  90,  0);
+                xPosicaoSprite-=0.1;
+                xVerticeSprite-=80;
 
                 glTexCoord2f(xPosicaoSprite, 1);
-                glVertex3f(240,  90,  0);
+                glVertex3f(xVerticeSprite,  90,  0);
             }
 
             else{
                 glTexCoord2f(xPosicaoSprite, 0);
-                glVertex3f(160, 10,  0);
+                glVertex3f(xVerticeSprite, 10,  0);
                 xPosicaoSprite+=0.1;
+                xVerticeSprite+=80;
 
                 glTexCoord2f(xPosicaoSprite, 0);
-                glVertex3f( 240, 10,  0);
+                glVertex3f( xVerticeSprite, 10,  0);
 
                 glTexCoord2f(xPosicaoSprite,1);
-                glVertex3f( 240,  90,  0);
+                glVertex3f( xVerticeSprite,  90,  0);
                 xPosicaoSprite-=0.1;
+                xVerticeSprite-=80;
 
                 glTexCoord2f(xPosicaoSprite, 1);
-                glVertex3f(160,  90,  0);
+                glVertex3f(xVerticeSprite,  90,  0);
             }
         }
 
@@ -146,37 +152,57 @@ void teclado(unsigned char key, int x, int y) {
 
 void spriteEsquerda() {
   
+  if (primeiraVez)
+  {
+    xVerticeSprite=160;
+    primeiraVez=0;
+  }
   if (ladoEsq)
   {
     xPosicaoSprite=0.3;
-    ladoEsq=0;
+      ladoEsq=0;
+      ladoDir=1;
+
   }
   else{
+    if (xVerticeSprite>=10)
+    {
+        xVerticeSprite-=10;
+    }
   
     xPosicaoSprite-=0.1;
     
   }
-  if (xPosicaoSprite<0.0)
+  if (xPosicaoSprite<0.1)
   {
       xPosicaoSprite=0.3;
-      ladoEsq=1;
   }
   direita=1;
 }
 
 void spriteDireita() {  
+  if (primeiraVez)
+  {
+    xVerticeSprite=160;
+    primeiraVez=0;
+  }
   if (ladoDir)
   {
-    xPosicaoSprite=0.6;
-    ladoDir=0;
+      xPosicaoSprite=0.5;
+      ladoDir=0;
+
+      ladoEsq=1;
   }
   else {
+    if (xVerticeSprite<320)
+    {
+        xVerticeSprite+=10;
+    }
     xPosicaoSprite+=0.1;
   }
-  if (xPosicaoSprite>1)
+  if (xPosicaoSprite>0.9)
   {
-      xPosicaoSprite=0.6;
-      ladoDir=1;
+      xPosicaoSprite=0.5;
   }
   direita=0;
 }
