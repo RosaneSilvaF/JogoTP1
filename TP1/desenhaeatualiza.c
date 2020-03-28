@@ -33,6 +33,18 @@ void desenha() {
 
     desenhaNave();
 
+    if(tiro){
+        atiraCaninha();
+        if(yCaninha<600){
+                yCaninha+=10;
+            }
+            else{
+                tiro=0;
+                xCaninha=xVerticeSprite+40;
+                yCaninha=80;
+            }
+    }
+
     glutSwapBuffers();
 }
 

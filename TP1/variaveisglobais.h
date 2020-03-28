@@ -2,9 +2,9 @@
 #define VARIAVEISGLOBAIS_H
 
 
-GLuint idTexturaFundo,idTexturaLulinha;
+GLuint idTexturaFundo,idTexturaLulinha,idTexturaCaninha;
 GLuint texturaAtual;
-float xTextura,yTextura,xPosicaoSprite,xVerticeSprite=160;
-int ladoDir=1,ladoEsq=1,direita=0,frames=0,costas=1,primeiraVez=1;
+float xTextura,yTextura,xPosicaoSprite,xVerticeSprite=160,yCaninha=80,xCaninha=200;
+int ladoDir=1,ladoEsq=1,direita=0,frames=0,costas=1,primeiraVez=1,tiro=0;
 
 #endif

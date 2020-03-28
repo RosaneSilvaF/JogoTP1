@@ -7,6 +7,7 @@
 #include "variaveisglobais.h"
 #include "eventosteclado.h"
 #include "ladospriteandando.h"
+#include "atiracaninha.h"
 
 
 void teclado(unsigned char key, int x, int y) {
@@ -16,6 +17,8 @@ void teclado(unsigned char key, int x, int y) {
         break;
         case 32:
             costas=1;
+            tiro=1;
+            
         break;
     }
 }

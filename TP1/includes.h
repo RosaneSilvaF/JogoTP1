@@ -11,3 +11,4 @@
 #include "ladospriteandando.h"
 #include "desenhaeatualiza.h"
 #include "inicializa.h"
+#include "atiracaninha.h"

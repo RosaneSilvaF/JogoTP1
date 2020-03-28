@@ -5,6 +5,7 @@
 #include <stdio.h>
 #include "desenhanave.h"
 #include "variaveisglobais.h"
+#include "atiracaninha.h"
 
 #define tamanhoLadoSprite 80 //o lado do quadrado q contem a sprite do personagem principal tem 80 de largura e altura.
 #define xSpriteAtual 0.1 //x para a seleção da imagem da sprite 
@@ -12,7 +13,7 @@
 float yVerticeSprite=10;
 
 void desenhaNave(){
-
+    
     glEnable(GL_TEXTURE_2D);
     glBindTexture(GL_TEXTURE_2D, idTexturaLulinha);
     glBegin(GL_TRIANGLE_FAN);
@@ -32,6 +33,7 @@ void desenhaNave(){
             glTexCoord2f(0.4, 1);
             glVertex3f(xVerticeSprite,  yVerticeSprite,  0);
             yVerticeSprite-=tamanhoLadoSprite;
+
 
         }
         else{
