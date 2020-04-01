@@ -1,0 +1,1 @@
+gcc TP1.c -lGL -lglut -lGLEW -lGLU -lSOIL
