@@ -5,6 +5,7 @@
 #include <stdio.h>
 
 #include "desenhanave.h"
+#include "desenhaexercito.h"
 #include "variaveisglobais.h"
 #include "desenhaeatualiza.h"
 
@@ -32,6 +33,7 @@ void desenha() {
     glDisable(GL_TEXTURE_2D);
 
     desenhaNave();
+    desenhaExercito();
 
     if(tiro){
         atiraCaninha();

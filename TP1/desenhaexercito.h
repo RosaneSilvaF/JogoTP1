@@ -1,7 +1,7 @@
 #ifndef DESENHANAVE_H
 #define DESENHANAVE_H
 
-#include "desenhanave.c"
+#include "desenhaexercito.c"
 
 void desenhaExercito();
 

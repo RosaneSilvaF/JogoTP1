@@ -10,18 +10,21 @@
 #define tamanhoLadoYSprite 110 //é retangular
 #define xSpriteAtual 0.1 //x para a seleção da imagem da sprite 
 
-float yVerticeSprite=10;
+float yVerticeSprite=100;
 
 void desenhaExercito(){
+	soldado.x=100;
+	soldado.y=100;
 
     glEnable(GL_TEXTURE_2D);
     glBindTexture(GL_TEXTURE_2D, sprite_exercito);
     glBegin(GL_TRIANGLE_FAN);
   	for(int i=0; i<15;i++){
-		if (frente){
-		    glTexCoord2f(0.3, 0.6);
+		if (ativo){
+		    glTexCoord2f(0.3, 0);
 		    glVertex3f(xVerticeSprite,  yVerticeSprite,  0);
 		    yVerticeSprite-=tamanhoLadoSprite;
+		    glTranslatef(soldado.x, soldado.y, 0);
 
 		}
         
