@@ -3,7 +3,7 @@
 int main(int argc, char** argv) {
     glutInit(&argc, argv);
     glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB);
-    glutInitWindowSize(400, 600);
+    glutInitWindowSize(700, 650);
     glutInitWindowPosition(100, 100);
 
     glutCreateWindow("Carregando textura com SOIL");

@@ -12,7 +12,7 @@ void spriteEsquerda() {
   
   if (primeiraVez)
   {
-    xVerticeSprite=160;
+    xVerticeSprite=325;
     primeiraVez=0;
   }
   if (ladoEsq)
@@ -41,7 +41,7 @@ void spriteEsquerda() {
 void spriteDireita() {  
   if (primeiraVez)
   {
-    xVerticeSprite=160;
+    xVerticeSprite=325;
     primeiraVez=0;
   }
   if (ladoDir)
@@ -52,7 +52,7 @@ void spriteDireita() {
       ladoEsq=1;
   }
   else {
-    if (xVerticeSprite<320)
+    if (xVerticeSprite<620)
     {
         xVerticeSprite+=10;
     }

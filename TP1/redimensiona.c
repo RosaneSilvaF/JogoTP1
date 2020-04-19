@@ -12,7 +12,7 @@ void redimensiona(int w, int h) {
 
     glMatrixMode(GL_PROJECTION);
     glLoadIdentity();
-    glOrtho(0, 400, 0, 600, -1.0, 1.0);
+    glOrtho(0, 700, 0, 650, -1.0, 1.0);
 
     glMatrixMode(GL_MODELVIEW);
 }

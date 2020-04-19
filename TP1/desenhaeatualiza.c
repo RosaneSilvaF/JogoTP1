@@ -21,23 +21,23 @@ void desenha() {
         glVertex3f(0, 0,  0);
 
         glTexCoord2f(1, 0);
-        glVertex3f( 400, 0,  0);
+        glVertex3f( 700, 0,  0);
 
         glTexCoord2f(1, 1);
-        glVertex3f( 400,  600,  0);
+        glVertex3f( 700,  650,  0);
 
         glTexCoord2f(0, 1);
-        glVertex3f(0,  600,  0);
+        glVertex3f(0,  650,  0);
 
     glEnd();
     glDisable(GL_TEXTURE_2D);
 
     desenhaNave();
-    desenhaExercito();
+    //desenhaExercito();
 
     if(tiro){
         atiraCaninha();
-        if(yCaninha<600){
+        if(yCaninha<700){
                 yCaninha+=10;
             }
             else{
