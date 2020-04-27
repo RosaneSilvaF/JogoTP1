@@ -9,6 +9,8 @@
 #include "variaveisglobais.h"
 #include "desenhaeatualiza.h"
 
+
+
 void desenha() {
     glClear(GL_COLOR_BUFFER_BIT);
     glColor3f (1, 1, 1);
@@ -33,7 +35,11 @@ void desenha() {
     glDisable(GL_TEXTURE_2D);
 
     desenhaNave();
-    //desenhaExercito();
+
+    //for (int i = 0; i < 8; i++){ 
+        desenhaExercito();   
+    //}
+    
 
     if(tiro){
         atiraCaninha();

@@ -1,5 +1,5 @@
-#ifndef DESENHANAVE_H
-#define DESENHANAVE_H
+#ifndef DESENHAEXERCITO_H
+#define DESENHAEXERCITO_H
 
 #include "desenhaexercito.c"
 
