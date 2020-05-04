@@ -18,6 +18,7 @@ void teclado(unsigned char key, int x, int y) {
         case 32:
             costas=1;
             tiro=1;
+            xCaninha=xVerticeSprite+40;
             
         break;
     }

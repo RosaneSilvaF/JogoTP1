@@ -2,7 +2,7 @@
 #include "variaveisglobais.h"
 
 void atiraCaninha(){
-    float ladoCaninha=20;
+    
 
 
 	glEnable(GL_TEXTURE_2D);
@@ -13,7 +13,7 @@ void atiraCaninha(){
     glBegin(GL_TRIANGLE_FAN);
 
             glTexCoord2f(0, 0);
-            glVertex3f(-ladoCaninha, -ladoCaninha,  0);
+            glVertex3f(-ladoCaninha, -ladoCaninha,  0); //baixo esquerda
 
 
             glTexCoord2f(1, 0);

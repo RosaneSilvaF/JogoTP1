@@ -10,13 +10,22 @@
 #define tamanhoLadoYSprite 50 //é retangular
 #define xSpriteAtual 0.1 //x para a seleção da imagem da sprite
 
-// void abateDeGado(){
-// 	for (int i = 0; i < count; i++)
-// 	{
-// 		/* code */
-// 	}
+void abateDeGado(){
+	for (int i = 0; i < 8; i++){
+		if(xVerticeGado[i] <= xCaninha && xCaninha <= xVerticeGado[i]+tamanhoLadoXSprite){
+			if(yCaninha-ladoCaninha<=yVerticeGado && yVerticeGado<= yCaninha+ladoCaninha)
+				ativo[i]=0;			
+		}
+		
+	}
+
+	// for (int i = 0; i < 8; i++){
+	// 	printf("%d \t",ativo[i]);
+	// }
+	// printf("\n");
 	
-// }
+	
+}
 
 void desenhaExercito(){
 
@@ -31,7 +40,7 @@ void desenhaExercito(){
 			glBegin(GL_POLYGON);
 		
 				glTexCoord2f(0.3, 1);
-				glVertex3f(xVerticeGado[i],  yVerticeGado,  0);
+				glVertex3f(xVerticeGado[i],  yVerticeGado,  0); //cima esquerda
 
 				glTexCoord2f(0.3,0.01);
 				glVertex3f(xVerticeGado[i], yVerticeGado - tamanhoLadoYSprite, 0);

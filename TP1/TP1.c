@@ -6,7 +6,7 @@ int main(int argc, char** argv) {
     glutInitWindowSize(700, 650);
     glutInitWindowPosition(100, 100);
 
-    glutCreateWindow("Carregando textura com SOIL");
+    glutCreateWindow("Luladrão roubou meu coração");
 
     glutReshapeFunc(redimensiona);
     glutKeyboardFunc(teclado);

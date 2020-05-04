@@ -35,6 +35,7 @@ void desenha() {
     glDisable(GL_TEXTURE_2D);
 
     desenhaNave();
+    abateDeGado();
 
     //for (int i = 0; i < 8; i++){ 
         desenhaExercito();   
@@ -48,7 +49,6 @@ void desenha() {
             }
             else{
                 tiro=0;
-                xCaninha=xVerticeSprite+40;
                 yCaninha=80;
             }
     }
