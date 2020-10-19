@@ -27,6 +27,23 @@ void abateDeGado(){
 	
 }
 
+void abateDeGado2(){
+	for (int i = 0; i < 8; i++){
+		if(xVerticeGado[i] <= xCaninha && xCaninha <= xVerticeGado[i]+tamanhoLadoXSprite){
+			if(yCaninha-ladoCaninha<=yVerticeGado && yVerticeGado<= yCaninha+ladoCaninha)
+				ativo2[i]=0;			
+		}
+		
+	}
+
+	// for (int i = 0; i < 8; i++){
+	// 	printf("%d \t",ativo[i]);
+	// }
+	// printf("\n");
+	
+	
+}
+
 void desenhaExercito(){
 
     //glEnable(GL_TEXTURE_2D);
@@ -50,6 +67,42 @@ void desenhaExercito(){
 
 				glTexCoord2f(0.66,1);
 				glVertex3f(xVerticeGado[i]+tamanhoLadoXSprite,yVerticeGado,0);
+
+
+			glEnd();
+		}
+		if(xVerticeGado[0]<10)
+			sinal*=-1;
+		else if(xVerticeGado[7]>620)
+				sinal*=-1;
+		
+		for (int u = 0; u < 8; u++)
+		{
+			xVerticeGado[u]+=sinal; 
+		}
+		
+		  
+    }
+
+	for(int i=0; i<7;i++){
+    //glBegin(GL_POLYGON);
+  	
+		if (ativo2[i]){
+			glEnable(GL_TEXTURE_2D);
+			glBindTexture(GL_TEXTURE_2D, idTexturaGado);
+			glBegin(GL_POLYGON);
+		
+				glTexCoord2f(0.3, 1);
+				glVertex3f(xVerticeGado[i],  yVerticeGado-50,  0); //cima esquerda
+
+				glTexCoord2f(0.3,0.01);
+				glVertex3f(xVerticeGado[i], yVerticeGado-50 - tamanhoLadoYSprite, 0);
+
+				glTexCoord2f(0.66, 0.01);
+				glVertex3f(xVerticeGado[i]+tamanhoLadoXSprite, yVerticeGado-50 - tamanhoLadoYSprite,0);
+
+				glTexCoord2f(0.66,1);
+				glVertex3f(xVerticeGado[i]+tamanhoLadoXSprite,yVerticeGado-50,0);
 
 
 			glEnd();
