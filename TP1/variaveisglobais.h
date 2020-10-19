@@ -12,6 +12,4 @@ int continua=1;
 int ativo[8]={1,1,1,1,1,1,1,1};
 int ativo2[7]={1,1,1,1,1,1,1};
 
-
-
 #endif
