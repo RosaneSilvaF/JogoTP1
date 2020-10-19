@@ -37,9 +37,9 @@ void desenha() {
     desenhaNave();
     abateDeGado();
 
-    //for (int i = 0; i < 8; i++){ 
+    for (int i = 0; i < 8; i++){ 
         desenhaExercito();   
-    //}
+    }
     
 
     if(tiro){
@@ -58,6 +58,8 @@ void desenha() {
 
 
 void atualiza(int periodo) {
-    glutPostRedisplay();
-    glutTimerFunc(33,atualiza,0);
+    if(continua){
+        glutPostRedisplay();
+        glutTimerFunc(33,atualiza,0);
+    }
 }

@@ -14,16 +14,22 @@ void abateDeGado(){
 	for (int i = 0; i < 8; i++){
 		if(xVerticeGado[i] <= xCaninha && xCaninha <= xVerticeGado[i]+tamanhoLadoXSprite){
 			if(yCaninha-ladoCaninha<=yVerticeGado && yVerticeGado<= yCaninha+ladoCaninha)
-				ativo[i]=0;			
-		}
-		
-	}
+				ativo[i]=0;		
 
-	// for (int i = 0; i < 8; i++){
-	// 	printf("%d \t",ativo[i]);
-	// }
-	// printf("\n");
-	
+				
+	 			
+		}
+	}
+	int soma = 0;
+	 for (int i = 0; i < 8; ++i)
+	 {
+	 	soma = ativo[i]+soma;
+	 }
+	 if (soma==0){
+	 	continua=0;
+	 }
+		
+	// printf("\n"
 	
 }
 
@@ -66,6 +72,7 @@ void desenhaExercito(){
 		
 		  
     }
+
 
     
     glDisable(GL_TEXTURE_2D);
