@@ -14,23 +14,29 @@ void abateDeGado(){
 	for (int i = 0; i < 8; i++){
 		if(xVerticeGado[i] <= xCaninha && xCaninha <= xVerticeGado[i]+tamanhoLadoXSprite){
 			if(yCaninha-ladoCaninha<=yVerticeGado && yVerticeGado<= yCaninha+ladoCaninha)
-				ativo[i]=0;			
-		}
-		
-	}
+				ativo[i]=0;		
 
-	// for (int i = 0; i < 8; i++){
-	// 	printf("%d \t",ativo[i]);
-	// }
+				
+	 			
+		}
+	}
+	int soma = 0;
+	 for (int i = 0; i < 8; ++i)
+	 {
+	 	soma = ativo[i]+ ativo2[i]+soma;
+	 }
+	 if (soma==0){
+	 	continua=0;
+	 }
+		
 	// printf("\n");
-	
 	
 }
 
 void abateDeGado2(){
-	for (int i = 0; i < 8; i++){
-		if(xVerticeGado[i] <= xCaninha && xCaninha <= xVerticeGado[i]+tamanhoLadoXSprite){
-			if(yCaninha-ladoCaninha<=yVerticeGado && yVerticeGado<= yCaninha+ladoCaninha)
+	for (int i = 0; i < 7; i++){
+		if(xVerticeGado[i]+xGado2 <= xCaninha && xCaninha <= xVerticeGado[i]+xGado2+tamanhoLadoXSprite){
+			if(yCaninha-ladoCaninha<=yVerticeGado-yGado2 && yVerticeGado-yGado2<= yCaninha+ladoCaninha)
 				ativo2[i]=0;			
 		}
 		
@@ -93,16 +99,16 @@ void desenhaExercito(){
 			glBegin(GL_POLYGON);
 		
 				glTexCoord2f(0.3, 1);
-				glVertex3f(xVerticeGado[i],  yVerticeGado-50,  0); //cima esquerda
+				glVertex3f(xVerticeGado[i]+xGado2,  yVerticeGado-yGado2,  0); //cima esquerda
 
 				glTexCoord2f(0.3,0.01);
-				glVertex3f(xVerticeGado[i], yVerticeGado-50 - tamanhoLadoYSprite, 0);
+				glVertex3f(xVerticeGado[i]+xGado2, yVerticeGado-yGado2 - tamanhoLadoYSprite, 0);
 
 				glTexCoord2f(0.66, 0.01);
-				glVertex3f(xVerticeGado[i]+tamanhoLadoXSprite, yVerticeGado-50 - tamanhoLadoYSprite,0);
+				glVertex3f(xVerticeGado[i]+xGado2+tamanhoLadoXSprite, yVerticeGado-yGado2 - tamanhoLadoYSprite,0);
 
 				glTexCoord2f(0.66,1);
-				glVertex3f(xVerticeGado[i]+tamanhoLadoXSprite,yVerticeGado-50,0);
+				glVertex3f(xVerticeGado[i]+xGado2+tamanhoLadoXSprite,yVerticeGado-yGado2,0);
 
 
 			glEnd();

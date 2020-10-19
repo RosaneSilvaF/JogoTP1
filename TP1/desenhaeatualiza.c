@@ -59,6 +59,11 @@ void desenha() {
 
 
 void atualiza(int periodo) {
-    glutPostRedisplay();
-    glutTimerFunc(33,atualiza,0);
+    if(continua){
+        glutPostRedisplay();
+        glutTimerFunc(33,atualiza,0);
+    }
+    //else{
+        //tela fim
+    //}
 }
