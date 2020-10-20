@@ -24,22 +24,35 @@ void atira(){
         }  
     }
 }
-void jogaTiroInimigo(){
-    printf("%i\n", tiroRandomico);
 
-    if(tiroRandomico%5==0){
-        if(yTiroInimigo>0){
-            yTiroInimigo-=10;
-        }
-        else{
-            yTiroInimigo=rand()%500;
-            while(yTiroInimigo<400){
-                yTiroInimigo=rand()%500;
-            }
-            xTiroInimigo=rand()%500;
-        } 
-        desenhaTiroInimigo();
+void jogaTiroInimigo(){
+
+    if(yTiroInimigo>0){
+        yTiroInimigo-=10;
     }
+    else{
+        escolheInimigo = rand()%8;
+
+        printf("%i\n",escolheInimigo );
+        printf("%i\n",ativo[escolheInimigo] );
+        
+            if(ativo[escolheInimigo]==1){
+                yTiroInimigo = yVerticeGado;
+                xTiroInimigo = xVerticeGado[escolheInimigo]-20;  
+            }
+
+            else if(ativo2[escolheInimigo]==1 ){
+                yTiroInimigo = yVerticeGado-yGado2;
+                xTiroInimigo = xVerticeGado[escolheInimigo];
+            }
+
+            else if(ativo3[escolheInimigo]==1){
+                yTiroInimigo = yVerticeGado-yGado2-yGado2;
+                xTiroInimigo = xVerticeGado[escolheInimigo];
+            }
+            
+    }
+    desenhaTiroInimigo();
 }
 
 void desenha() {
@@ -73,7 +86,6 @@ void desenha() {
 	continuar(); 
     desenhaExercito();
     atira();
-    
 
     
     glutSwapBuffers();

@@ -6,7 +6,7 @@ int main(int argc, char** argv) {
     glutInitWindowSize(700, 650);
     glutInitWindowPosition(100, 100);
 
-    glutCreateWindow("Luladrão roubou meu coração");
+    glutCreateWindow("Companheiro Ladrao roubou meu coracao");
 
     glutReshapeFunc(redimensiona);
     glutKeyboardFunc(teclado);

@@ -8,6 +8,7 @@
 #include "eventosteclado.h"
 #include "ladospriteandando.h"
 #include "atiracaninha.h"
+#include "desenhaeatualiza.h"
 
 
 void teclado(unsigned char key, int x, int y) {
@@ -18,7 +19,9 @@ void teclado(unsigned char key, int x, int y) {
         case 32:
             costas=1;
             tiro=1;
-            xCaninha=xVerticeSprite+40;
+            if(yCaninha==80){
+                xCaninha=xVerticeSprite+40;
+            }
             
         break;
         case 112:
