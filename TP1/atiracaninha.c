@@ -12,18 +12,21 @@ void atiraCaninha(){
 
     glBegin(GL_TRIANGLE_FAN);
 
-            glTexCoord2f(0, 0);
-            glVertex3f(-ladoCaninha, -ladoCaninha,  0); //baixo esquerda
+            if (acerto==0 && yCaninha<700)
+            {
+                glTexCoord2f(0, 0);
+                glVertex3f(-ladoCaninha, -ladoCaninha,  0); //baixo esquerda
 
 
-            glTexCoord2f(1, 0);
-            glVertex3f( ladoCaninha, -ladoCaninha,  0);
+                glTexCoord2f(1, 0);
+                glVertex3f( ladoCaninha, -ladoCaninha,  0);
 
-            glTexCoord2f(1,1);
-            glVertex3f( ladoCaninha,  ladoCaninha,  0);
+                glTexCoord2f(1,1);
+                glVertex3f( ladoCaninha,  ladoCaninha,  0);
 
-            glTexCoord2f(0, 1);
-            glVertex3f(-ladoCaninha,  ladoCaninha,  0);
+                glTexCoord2f(0, 1);
+                glVertex3f(-ladoCaninha,  ladoCaninha,  0);
+            }
 
     glEnd();
     glPopMatrix();

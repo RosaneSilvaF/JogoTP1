@@ -8,8 +8,39 @@
 #include "desenhaexercito.h"
 #include "variaveisglobais.h"
 #include "desenhaeatualiza.h"
+#include "desenhaTiroInimigo.h"
 
+void atira(){
+    if(tiro){
+        atiraCaninha();
+        if(acerto == 0 && yCaninha<700){
+            yCaninha+=10;
+        }
+        else{
+            acerto=0;
+            tiro=0;
+            yCaninha=80;
+            
+        }  
+    }
+}
+void jogaTiroInimigo(){
+    printf("%i\n", tiroRandomico);
 
+    if(tiroRandomico%5==0){
+        if(yTiroInimigo>0){
+            yTiroInimigo-=10;
+        }
+        else{
+            yTiroInimigo=rand()%500;
+            while(yTiroInimigo<400){
+                yTiroInimigo=rand()%500;
+            }
+            xTiroInimigo=rand()%500;
+        } 
+        desenhaTiroInimigo();
+    }
+}
 
 void desenha() {
     glClear(GL_COLOR_BUFFER_BIT);
@@ -34,27 +65,21 @@ void desenha() {
     glEnd();
     glDisable(GL_TEXTURE_2D);
 
+    jogaTiroInimigo();
     desenhaNave();
     abateDeGado();
     abateDeGado2();
     abateDeGado3();
 	continuar(); 
     desenhaExercito();
+    atira();
     
 
-    if(tiro){
-        atiraCaninha();
-        if(yCaninha<700){
-                yCaninha+=10;
-            }
-            else{
-                tiro=0;
-                yCaninha=80;
-            }
-    }
-
+    
     glutSwapBuffers();
 }
+
+
 
 
 void atualiza(int periodo) {

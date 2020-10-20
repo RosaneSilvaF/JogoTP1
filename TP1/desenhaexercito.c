@@ -13,9 +13,12 @@
 void abateDeGado(){
 	for (int i = 0; i < 8; i++){
 		if(xVerticeGado[i] <= xCaninha && xCaninha <= xVerticeGado[i]+tamanhoLadoXSprite){
-			if(yCaninha-ladoCaninha<=yVerticeGado && yVerticeGado<= yCaninha+ladoCaninha)
-				ativo[i]=0;		
-
+			if(yCaninha-ladoCaninha<=yVerticeGado && 
+				yVerticeGado<= yCaninha+ladoCaninha && 
+				ativo[i]==1){
+				ativo[i]=0;	
+				acerto=1;	
+			}
 		
 		}
 
@@ -27,8 +30,13 @@ void abateDeGado(){
 void abateDeGado2(){
 	for (int i = 0; i < 7; i++){
 		if(xVerticeGado[i]+xGado2 <= xCaninha && xCaninha <= xVerticeGado[i]+xGado2+tamanhoLadoXSprite){
-			if(yCaninha-ladoCaninha<=yVerticeGado-yGado2 && yVerticeGado-yGado2<= yCaninha+ladoCaninha)
-				ativo2[i]=0;			
+			if(yCaninha-ladoCaninha<=yVerticeGado-yGado2 && 
+				yVerticeGado-yGado2<= yCaninha+ladoCaninha && 
+				ativo2[i]==1){
+
+				ativo2[i]=0;	
+				acerto=1;		
+			}
 		}
 		
 	}
@@ -44,8 +52,13 @@ void abateDeGado2(){
 void abateDeGado3(){
 	for (int i = 0; i < 7; i++){
 		if(xVerticeGado[i]+xGado2 <= xCaninha && xCaninha <= xVerticeGado[i]+xGado2+tamanhoLadoXSprite){
-			if(yCaninha-ladoCaninha<=yVerticeGado+yGado2 && yVerticeGado+yGado2<= yCaninha+ladoCaninha)
-				ativo3[i]=0;			
+			if(yCaninha-ladoCaninha<=yVerticeGado+yGado2 && 
+				yVerticeGado+yGado2<= yCaninha+ladoCaninha && 
+				ativo3[i]==1){
+
+				ativo3[i]=0;
+				acerto=1;			
+			}
 		}
 		
 	}

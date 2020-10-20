@@ -5,5 +5,7 @@
 
 void desenha();
 void atualiza(int periodo);
+void atira();
+void jogaTiroInimigo();
 
 #endif
