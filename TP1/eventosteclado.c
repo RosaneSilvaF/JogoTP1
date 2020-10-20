@@ -21,6 +21,13 @@ void teclado(unsigned char key, int x, int y) {
             xCaninha=xVerticeSprite+40;
             
         break;
+        case 112:
+        case 80:
+            if(pause==1)
+                pause=0;
+            else
+                pause=1;
+        break;
     }
 }
 

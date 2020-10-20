@@ -38,11 +38,8 @@ void desenha() {
     abateDeGado();
     abateDeGado2();
     abateDeGado3();
-	continuar();
-
-    //for (int i = 0; i < 8; i++){ 
-        desenhaExercito(); 
-    //}
+	continuar(); 
+    desenhaExercito();
     
 
     if(tiro){
@@ -66,6 +63,6 @@ void atualiza(int periodo) {
         glutTimerFunc(33,atualiza,0);
     }
     //else{
-        //tela fim
+        //tela ganhou companheiro
     //}
 }
