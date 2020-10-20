@@ -11,5 +11,6 @@ float sinal=0.1;
 int continua=1;
 int ativo[8]={1,1,1,1,1,1,1,1};
 int ativo2[7]={1,1,1,1,1,1,1};
+int ativo3[7]={1,1,1,1,1,1,1};
 
 #endif

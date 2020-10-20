@@ -16,19 +16,10 @@ void abateDeGado(){
 			if(yCaninha-ladoCaninha<=yVerticeGado && yVerticeGado<= yCaninha+ladoCaninha)
 				ativo[i]=0;		
 
-				
-	 			
-		}
-	}
-	int soma = 0;
-	 for (int i = 0; i < 8; ++i)
-	 {
-	 	soma = ativo[i]+ ativo2[i]+soma;
-	 }
-	 if (soma==0){
-	 	continua=0;
-	 }
 		
+		}
+
+	}	
 	// printf("\n");
 	
 }
@@ -48,6 +39,39 @@ void abateDeGado2(){
 	// printf("\n");
 	
 	
+}
+
+void abateDeGado3(){
+	for (int i = 0; i < 7; i++){
+		if(xVerticeGado[i]+xGado2 <= xCaninha && xCaninha <= xVerticeGado[i]+xGado2+tamanhoLadoXSprite){
+			if(yCaninha-ladoCaninha<=yVerticeGado+yGado2 && yVerticeGado+yGado2<= yCaninha+ladoCaninha)
+				ativo3[i]=0;			
+		}
+		
+	}
+
+	// for (int i = 0; i < 8; i++){
+	// 	printf("%d \t",ativo[i]);
+	// }
+	// printf("\n");
+	
+	
+}
+void continuar(){
+	int soma = 0;
+	for (int i = 0; i < 8; ++i){
+	 	soma += ativo[i];
+	}
+	for (int i = 0; i < 7; ++i){
+	 	soma += ativo2[i];
+	}
+		for (int i = 0; i < 7; ++i){
+	 	soma += ativo3[i];
+	}
+	
+	if (soma==0){
+		continua=0;
+	}
 }
 
 void desenhaExercito(){
@@ -109,6 +133,41 @@ void desenhaExercito(){
 
 				glTexCoord2f(0.66,1);
 				glVertex3f(xVerticeGado[i]+xGado2+tamanhoLadoXSprite,yVerticeGado-yGado2,0);
+
+
+			glEnd();
+		}
+		if(xVerticeGado[0]<10)
+			sinal*=-1;
+		else if(xVerticeGado[7]>620)
+				sinal*=-1;
+		
+		for (int u = 0; u < 8; u++)
+		{
+			xVerticeGado[u]+=sinal; 
+		}
+		
+		  
+    }
+	for(int i=0; i<7;i++){
+    //glBegin(GL_POLYGON);
+  	
+		if (ativo3[i]){
+			glEnable(GL_TEXTURE_2D);
+			glBindTexture(GL_TEXTURE_2D, idTexturaGado);
+			glBegin(GL_POLYGON);
+		
+				glTexCoord2f(0.3, 1);
+				glVertex3f(xVerticeGado[i]+xGado2,  yVerticeGado+yGado2,  0); //cima esquerda
+
+				glTexCoord2f(0.3,0.01);
+				glVertex3f(xVerticeGado[i]+xGado2, yVerticeGado+yGado2 - tamanhoLadoYSprite, 0);
+
+				glTexCoord2f(0.66, 0.01);
+				glVertex3f(xVerticeGado[i]+xGado2+tamanhoLadoXSprite, yVerticeGado+yGado2 - tamanhoLadoYSprite,0);
+
+				glTexCoord2f(0.66,1);
+				glVertex3f(xVerticeGado[i]+xGado2+tamanhoLadoXSprite,yVerticeGado+yGado2,0);
 
 
 			glEnd();

@@ -37,6 +37,8 @@ void desenha() {
     desenhaNave();
     abateDeGado();
     abateDeGado2();
+    abateDeGado3();
+	continuar();
 
     //for (int i = 0; i < 8; i++){ 
         desenhaExercito(); 
