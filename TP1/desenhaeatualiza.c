@@ -27,12 +27,13 @@ void atira(){
 
 void jogaTiroInimigo(){
 
-    if(yTiroInimigo>0){
+    if(yTiroInimigo>0 && acertouOLulinha==0){
         yTiroInimigo-=10;
     }
     else{
+        acertouOLulinha = 0;
         escolheInimigo = rand()%8;
-        
+
             if(ativo[escolheInimigo]==1){
                 yTiroInimigo = yVerticeGado;
                 xTiroInimigo = xVerticeGado[escolheInimigo]-20;  
@@ -50,6 +51,56 @@ void jogaTiroInimigo(){
             
     }
     desenhaTiroInimigo();
+}
+
+void gameOver(){
+    
+        glEnable(GL_TEXTURE_2D);
+        glBindTexture(GL_TEXTURE_2D, idTexturaGameOver);
+        glBegin(GL_TRIANGLE_FAN);
+
+                    
+            glTexCoord2f(0, 0);
+            glVertex3f(150, 125,  0);
+
+            glTexCoord2f(1, 0);
+            glVertex3f( 550, 125,  0);
+
+            glTexCoord2f(1, 1);
+            glVertex3f( 550,  525,  0);
+
+            glTexCoord2f(0, 1);
+            glVertex3f(150,  525,  0);
+                
+
+        glEnd();
+        glDisable(GL_TEXTURE_2D);
+    
+}
+
+void ganhou(){
+    
+        glEnable(GL_TEXTURE_2D);
+        glBindTexture(GL_TEXTURE_2D, idTexturaGanhou);
+        glBegin(GL_TRIANGLE_FAN);
+
+                    
+            glTexCoord2f(0, 0);
+            glVertex3f(150, 125,  0);
+
+            glTexCoord2f(1, 0);
+            glVertex3f( 550, 125,  0);
+
+            glTexCoord2f(1, 1);
+            glVertex3f( 550,  525,  0);
+
+            glTexCoord2f(0, 1);
+            glVertex3f(150,  525,  0);
+                
+
+        glEnd();
+        glDisable(GL_TEXTURE_2D);
+    
 }
 
 void desenha() {
@@ -75,6 +126,7 @@ void desenha() {
     glEnd();
     glDisable(GL_TEXTURE_2D);
 
+    
     jogaTiroInimigo();
     desenhaNave();
     abateDeGado();
@@ -85,9 +137,19 @@ void desenha() {
     atira();
     abateLulinha();
 
-    nivel=nivel+1;
-    if(nivel>1000)
-        jogaTiroInimigo();
+    if (continuaPerdeu==0)
+    {
+        gameOver();
+        desenhadoGameOver=1;
+    }
+    if(continuaGanhou==0){
+        ganhou();
+        desenhadoGameOver=1;
+    }
+
+    //nivel=nivel+1;
+    //if(nivel>1000)
+    //    jogaTiroInimigo();
 
 
     
@@ -98,10 +160,11 @@ void desenha() {
 
 
 void atualiza(int periodo) {
-    if(continua){
+    if(continuaGanhou && continuaGanhou && desenhadoGameOver==0){
         glutPostRedisplay();
         glutTimerFunc(33,atualiza,0);
     }
+
     //else{
         //tela ganhou companheiro
     //}

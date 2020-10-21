@@ -5,6 +5,8 @@
 #include <stdio.h>
 #include "desenhaexercito.h"
 #include "variaveisglobais.h"
+#include "desenhaeatualiza.h"
+
 
 #define tamanhoLadoXSprite 50 //o lado do quadrado q contem a sprite do personagem principal tem 80 de largura e altura.
 #define tamanhoLadoYSprite 50 //é retangular
@@ -16,10 +18,7 @@ void abateLulinha(){
 		if(yTiroInimigo-10<=yVerticeSprite && yVerticeSprite<= yTiroInimigo+10){
 			printf("Lulinha foi atingido!!!");
 			vidas-=1;
-			
-		}
-		if(vidas==0){
-			continua=0;
+			acertouOLulinha = 1;
 		}
 		
 	}
@@ -98,7 +97,14 @@ void continuar(){
 	}
 	
 	if (soma==0){
-		continua=0;
+		continuaGanhou=0;
+	}
+
+	if(vidas==0){
+		continuaPerdeu=0;
+		
+		printf("Vidas: %d",vidas);	
+
 	}
 }
 

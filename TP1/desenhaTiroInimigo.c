@@ -4,7 +4,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define tamanhoLadoSprite 80
 
 void desenhaTiroInimigo(){
 

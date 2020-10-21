@@ -18,4 +18,6 @@ void inicializa() {
     idTexturaLulinha= carregaTextura("sprite_lulinha.png");
     idTexturaCaninha = carregaTextura("caninha.png");
     idTexturaGado = carregaTextura("sprite_exercito.png");
+    idTexturaGameOver = carregaTextura("gameOver.png");
+    idTexturaGanhou = carregaTextura("ganhou.png");
 }
