@@ -19,7 +19,7 @@ void abateLulinha(){
 			printf(vidas);	
 		}
 		if(vidas==0){
-			continua=1;
+			continua=0;
 		}
 		
 	}
