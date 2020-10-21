@@ -10,6 +10,16 @@
 #define tamanhoLadoYSprite 50 //é retangular
 #define xSpriteAtual 0.1 //x para a seleção da imagem da sprite
 
+void abateLulinha(){
+
+	if(xVerticeSprite <= xTiroInimigo && xTiroInimigo <= xVerticeSprite+tamanhoLadoXSprite){
+		if(yTiroInimigo-10<=yVerticeSprite && yVerticeSprite<= yTiroInimigo+10){
+			printf("Lulinha foi atingido!!!");	
+		}
+		
+	}
+	
+}
 void abateDeGado(){
 	for (int i = 0; i < 8; i++){
 		if(xVerticeGado[i] <= xCaninha && xCaninha <= xVerticeGado[i]+tamanhoLadoXSprite){
@@ -100,28 +110,28 @@ void desenhaExercito(){
 			glBegin(GL_POLYGON);
 		
 				glTexCoord2f(0.3, 1);
-				glVertex3f(xVerticeGado[i],  yVerticeGado,  0); //cima esquerda
+				glVertex3f(xVerticeGado2[i],  yVerticeGado,  0); //cima esquerda
 
 				glTexCoord2f(0.3,0.01);
-				glVertex3f(xVerticeGado[i], yVerticeGado - tamanhoLadoYSprite, 0);
+				glVertex3f(xVerticeGado2[i], yVerticeGado - tamanhoLadoYSprite, 0);
 
 				glTexCoord2f(0.66, 0.01);
-				glVertex3f(xVerticeGado[i]+tamanhoLadoXSprite, yVerticeGado - tamanhoLadoYSprite,0);
+				glVertex3f(xVerticeGado2[i]+tamanhoLadoXSprite, yVerticeGado - tamanhoLadoYSprite,0);
 
 				glTexCoord2f(0.66,1);
-				glVertex3f(xVerticeGado[i]+tamanhoLadoXSprite,yVerticeGado,0);
+				glVertex3f(xVerticeGado2[i]+tamanhoLadoXSprite,yVerticeGado,0);
 
 
 			glEnd();
 		}
-		if(xVerticeGado[0]<10)
-			sinal*=-1;
-		else if(xVerticeGado[7]>620)
-				sinal*=-1;
+		if(xVerticeGado2[0]<5)
+			sinal2*=-1;
+		else if(xVerticeGado2[7]>620)
+				sinal2*=-1;
 		
 		for (int u = 0; u < 8; u++)
 		{
-			xVerticeGado[u]+=sinal; 
+			xVerticeGado2[u]-=sinal2*2; 
 		}
 		
 		  
@@ -186,13 +196,13 @@ void desenhaExercito(){
 			glEnd();
 		}
 		if(xVerticeGado[0]<10)
-			sinal*=-1;
+			sinal3*=-1;
 		else if(xVerticeGado[7]>620)
-				sinal*=-1;
+				sinal3*=-1;
 		
 		for (int u = 0; u < 8; u++)
 		{
-			xVerticeGado[u]+=sinal; 
+			xVerticeGado[u]+=sinal3*2; 
 		}
 		
 		  

@@ -86,6 +86,12 @@ void desenha() {
 	continuar(); 
     desenhaExercito();
     atira();
+    abateLulinha();
+
+    nivel=nivel+1;
+    if(nivel>1000)
+        jogaTiroInimigo();
+
 
     
     glutSwapBuffers();
