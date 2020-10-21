@@ -9,6 +9,7 @@
 #include "variaveisglobais.h"
 #include "desenhaeatualiza.h"
 #include "desenhaTiroInimigo.h"
+#include "contagemVidas.h"
 
 void atira(){
     if(tiro){
@@ -104,65 +105,71 @@ void ganhou(){
 }
 
 void desenha() {
-    glClear(GL_COLOR_BUFFER_BIT);
-    glColor3f (1, 1, 1);
+    
+    if(pause==0){
 
-    glEnable(GL_TEXTURE_2D);
-    glBindTexture(GL_TEXTURE_2D, idTexturaFundo);
-    glBegin(GL_TRIANGLE_FAN);
+        glClear(GL_COLOR_BUFFER_BIT);
+        glColor3f (1, 1, 1);
+
+        glEnable(GL_TEXTURE_2D);
+        glBindTexture(GL_TEXTURE_2D, idTexturaFundo);
+        glBegin(GL_TRIANGLE_FAN);
+            
+            glTexCoord2f(0, 0);
+            glVertex3f(0, 0,  0);
+
+            glTexCoord2f(1, 0);
+            glVertex3f( 700, 0,  0);
+
+            glTexCoord2f(1, 1);
+            glVertex3f( 700,  650,  0);
+
+            glTexCoord2f(0, 1);
+            glVertex3f(0,  650,  0);
+
+        glEnd();
+        glDisable(GL_TEXTURE_2D);
+
+        contagemVidas();
+        jogaTiroInimigo();
+        desenhaNave();
+        abateDeGado();
+        abateDeGado2();
+        abateDeGado3();
+    	continuar(); 
+        desenhaExercito();
+        atira();
+        abateLulinha();
+
+        if (continuaPerdeu==0)
+        {
+            gameOver();
+            desenhadoGameOver=1;
+        }
+        if(continuaGanhou==0){
+            ganhou();
+            desenhadoGameOver=1;
+        }
+
+        //nivel=nivel+1;
+        //if(nivel>1000)
+        //    jogaTiroInimigo();
+
+
         
-        glTexCoord2f(0, 0);
-        glVertex3f(0, 0,  0);
-
-        glTexCoord2f(1, 0);
-        glVertex3f( 700, 0,  0);
-
-        glTexCoord2f(1, 1);
-        glVertex3f( 700,  650,  0);
-
-        glTexCoord2f(0, 1);
-        glVertex3f(0,  650,  0);
-
-    glEnd();
-    glDisable(GL_TEXTURE_2D);
-
-    
-    jogaTiroInimigo();
-    desenhaNave();
-    abateDeGado();
-    abateDeGado2();
-    abateDeGado3();
-	continuar(); 
-    desenhaExercito();
-    atira();
-    abateLulinha();
-
-    if (continuaPerdeu==0)
-    {
-        gameOver();
-        desenhadoGameOver=1;
+        glutSwapBuffers();
     }
-    if(continuaGanhou==0){
-        ganhou();
-        desenhadoGameOver=1;
-    }
-
-    //nivel=nivel+1;
-    //if(nivel>1000)
-    //    jogaTiroInimigo();
-
-
-    
-    glutSwapBuffers();
 }
 
 
 
 
 void atualiza(int periodo) {
-    if(continuaGanhou && continuaGanhou && desenhadoGameOver==0){
+    if(continuaGanhou && continuaGanhou && desenhadoGameOver==0 ){
+        
         glutPostRedisplay();
         glutTimerFunc(33,atualiza,0);
+        
     }
 
     //else{

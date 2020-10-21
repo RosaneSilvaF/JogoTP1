@@ -9,6 +9,7 @@
 #include "ladospriteandando.h"
 #include "atiracaninha.h"
 #include "desenhaeatualiza.h"
+#include "reinicializa.h"
 
 
 void teclado(unsigned char key, int x, int y) {
@@ -30,6 +31,10 @@ void teclado(unsigned char key, int x, int y) {
                 pause=0;
             else
                 pause=1;
+        break;
+        case 114:
+        case 82:
+            reinicializa();
         break;
     }
 }
