@@ -16,10 +16,10 @@ void abateLulinha(){
 		if(yTiroInimigo-10<=yVerticeSprite && yVerticeSprite<= yTiroInimigo+10){
 			printf("Lulinha foi atingido!!!");
 			vidas-=1;
-			printf(vidas);	
+			
 		}
 		if(vidas==0){
-			continua=1;
+			continua=0;
 		}
 		
 	}

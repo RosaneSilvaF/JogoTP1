@@ -32,9 +32,6 @@ void jogaTiroInimigo(){
     }
     else{
         escolheInimigo = rand()%8;
-
-        printf("%i\n",escolheInimigo );
-        printf("%i\n",ativo[escolheInimigo] );
         
             if(ativo[escolheInimigo]==1){
                 yTiroInimigo = yVerticeGado;
