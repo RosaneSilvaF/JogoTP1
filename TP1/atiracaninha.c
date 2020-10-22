@@ -4,7 +4,6 @@
 void atiraCaninha(){
     
 
-
 	glEnable(GL_TEXTURE_2D);
     glBindTexture(GL_TEXTURE_2D, idTexturaCaninha);
     glPushMatrix();

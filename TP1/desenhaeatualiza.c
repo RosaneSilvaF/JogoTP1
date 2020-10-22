@@ -32,8 +32,8 @@ void atira(){
 void tocaMusica(){
     if(!Mix_PlayingMusic()){
         Mix_PlayMusic(music,-1);
-        Mix_VolumeMusic(96);
-        printf("volume is now : %d\n", Mix_VolumeMusic(-1));
+        Mix_VolumeMusic(72);
+        //printf("volume is now : %d\n", Mix_VolumeMusic(-1));
     }
 
 }
@@ -54,6 +54,7 @@ void jogaTiroInimigo(){
     else{
         acertouOLulinha = 0;
         escolheInimigo = rand()%8;
+        Mix_PlayChannelTimed(-1,somExercito,0,1000);
 
             if(ativo[escolheInimigo]==1){
                 yTiroInimigo = yVerticeGado;
@@ -72,6 +73,7 @@ void jogaTiroInimigo(){
             
     }
     desenhaTiroInimigo();
+
 }
 
 void gameOver(){

@@ -9,6 +9,8 @@ GLuint idTexturaFundo,idTexturaLulinha,idTexturaCaninha,idTexturaGado,idTexturaG
 GLuint idTexturaLegenda,idTexturaComecar,idTexturaControles,idTexturaTitulo;
 GLuint texturaAtual, idTexturaGanhou, idTexturaVidas1, idTexturaVidas2, idTexturaVidas3, idTexturaAuxiliar;
 Mix_Music *music;
+Mix_Chunk *somLulinha;
+Mix_Chunk *somExercito;
 
 float xTextura,yTextura,xPosicaoSprite,xVerticeSprite=325,yCaninha=80,xCaninha=200, ladoCaninha=14;
 float xVerticeGado[8]={10,90,170,250,330,410,490,570},xVerticeGado2[8]={10,90,170,250,330,410,490,570};

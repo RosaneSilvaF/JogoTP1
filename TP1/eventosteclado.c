@@ -22,6 +22,7 @@ void teclado(unsigned char key, int x, int y) {
             costas=1;
             tiro=1;
             if(yCaninha==80){
+                Mix_PlayChannel(-1,somLulinha,0);
                 xCaninha=xVerticeSprite+40;
             }
             

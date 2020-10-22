@@ -28,7 +28,7 @@ void inicializa() {
     idTexturaVidas3 = carregaTextura("vidas3.png");
     idTexturaAlgema = carregaTextura("algema.png");
     idTexturaComecar = carregaTextura("comecar.png");
-    idTexturaControles = carregaTextura("controles.png");
+    idTexturaControles = carregaTextura("controles2.png");
     idTexturaTitulo = carregaTextura("titulo.png");
     idTexturaLegenda= carregaTextura("pausar.png");
 
@@ -36,10 +36,14 @@ void inicializa() {
     music=Mix_LoadMUS("music.mp3");
     if(!music) {
         printf("Mix_LoadMUS(\"music.mp3\"): %s\n", Mix_GetError());
-        // this might be a critical error...
-}
+    }
 
-    //musicaFundo=Mix_LoadMUS("HINO DA INDEPENDÊNCIA DO BRASIL.mp3");
+    somLulinha=Mix_LoadWAV("lulinha.wav");
+    somExercito=Mix_LoadWAV("exercito.wav");
+    if(!somLulinha || !somExercito) {
+    printf("Mix_LoadWAV: %s\n", Mix_GetError());
+    }
+
 
 
 }
