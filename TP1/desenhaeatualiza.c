@@ -108,10 +108,19 @@ void desenha() {
 
     if(!inicia){
         contagemdetempo++;
-        if (contagemdetempo%22==0)
+        if (contagemdetempo<200)
         {
+            idTexturaAuxiliar = idTexturaTitulo;
+        }
+        else if(contagemdetempo>200&& contagemdetempo<400){
+            idTexturaAuxiliar = idTexturaControles;
+        }
+        else if(contagemdetempo>400){
+            idTexturaAuxiliar = idTexturaComecar;
+        }
+        
             glEnable(GL_TEXTURE_2D);
-            glBindTexture(GL_TEXTURE_2D, idTexturaAperteI2);
+            glBindTexture(GL_TEXTURE_2D, idTexturaAuxiliar);
             glBegin(GL_TRIANGLE_FAN);
             
                 glTexCoord2f(0, 0);
@@ -130,29 +139,6 @@ void desenha() {
             glDisable(GL_TEXTURE_2D);
 
             glutSwapBuffers();
-        }
-        else if (contagemdetempo%5==0){
-            glEnable(GL_TEXTURE_2D);
-            glBindTexture(GL_TEXTURE_2D, idTexturaAperteI);
-            glBegin(GL_TRIANGLE_FAN);
-            
-                glTexCoord2f(0, 0);
-                glVertex3f(0, 0,  0);
-
-                glTexCoord2f(1, 0);
-                glVertex3f( 700, 0,  0);
-
-                glTexCoord2f(1, 1);
-                glVertex3f( 700,  650,  0);
-
-                glTexCoord2f(0, 1);
-                glVertex3f(0,  650,  0);
-
-            glEnd();
-            glDisable(GL_TEXTURE_2D);
-
-            glutSwapBuffers();
-        }
 
     }
     
