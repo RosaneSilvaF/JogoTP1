@@ -105,8 +105,59 @@ void ganhou(){
 }
 
 void desenha() {
+
+    if(!inicia){
+        contagemdetempo++;
+        if (contagemdetempo%22==0)
+        {
+            glEnable(GL_TEXTURE_2D);
+            glBindTexture(GL_TEXTURE_2D, idTexturaAperteI2);
+            glBegin(GL_TRIANGLE_FAN);
+            
+                glTexCoord2f(0, 0);
+                glVertex3f(0, 0,  0);
+
+                glTexCoord2f(1, 0);
+                glVertex3f( 700, 0,  0);
+
+                glTexCoord2f(1, 1);
+                glVertex3f( 700,  650,  0);
+
+                glTexCoord2f(0, 1);
+                glVertex3f(0,  650,  0);
+
+            glEnd();
+            glDisable(GL_TEXTURE_2D);
+
+            glutSwapBuffers();
+        }
+        else if (contagemdetempo%5==0){
+            glEnable(GL_TEXTURE_2D);
+            glBindTexture(GL_TEXTURE_2D, idTexturaAperteI);
+            glBegin(GL_TRIANGLE_FAN);
+            
+                glTexCoord2f(0, 0);
+                glVertex3f(0, 0,  0);
+
+                glTexCoord2f(1, 0);
+                glVertex3f( 700, 0,  0);
+
+                glTexCoord2f(1, 1);
+                glVertex3f( 700,  650,  0);
+
+                glTexCoord2f(0, 1);
+                glVertex3f(0,  650,  0);
+
+            glEnd();
+            glDisable(GL_TEXTURE_2D);
+
+            glutSwapBuffers();
+        }
+
+    }
     
-    if(pause==0){
+    else{
+        if(pause==0&&continuaGanhou && continuaGanhou && desenhadoGameOver==0 ){
 
         glClear(GL_COLOR_BUFFER_BIT);
         glColor3f (1, 1, 1);
@@ -127,37 +178,39 @@ void desenha() {
             glTexCoord2f(0, 1);
             glVertex3f(0,  650,  0);
 
-        glEnd();
-        glDisable(GL_TEXTURE_2D);
+            glEnd();
+            glDisable(GL_TEXTURE_2D);
 
-        contagemVidas();
-        jogaTiroInimigo();
-        desenhaNave();
-        abateDeGado();
-        abateDeGado2();
-        abateDeGado3();
-    	continuar(); 
-        desenhaExercito();
-        atira();
-        abateLulinha();
+            contagemVidas();
+            desenhaLegenda();
+            jogaTiroInimigo();
+            desenhaNave();
+            abateDeGado();
+            abateDeGado2();
+            abateDeGado3();
+        	continuar(); 
+            desenhaExercito();
+            atira();
+            abateLulinha();
 
-        if (continuaPerdeu==0)
-        {
-            gameOver();
-            desenhadoGameOver=1;
+            if (continuaPerdeu==0)
+            {
+                gameOver();
+                desenhadoGameOver=1;
+            }
+            if(continuaGanhou==0){
+                ganhou();
+                desenhadoGameOver=1;
+            }
+
+            //nivel=nivel+1;
+            //if(nivel>1000)
+            //    jogaTiroInimigo();
+
+
+            
+            glutSwapBuffers();
         }
-        if(continuaGanhou==0){
-            ganhou();
-            desenhadoGameOver=1;
-        }
-
-        //nivel=nivel+1;
-        //if(nivel>1000)
-        //    jogaTiroInimigo();
-
-
-        
-        glutSwapBuffers();
     }
 }
 
@@ -165,12 +218,12 @@ void desenha() {
 
 
 void atualiza(int periodo) {
-    if(continuaGanhou && continuaGanhou && desenhadoGameOver==0 ){
+    
         
         glutPostRedisplay();
         glutTimerFunc(33,atualiza,0);
         
-    }
+    
 
     //else{
         //tela ganhou companheiro

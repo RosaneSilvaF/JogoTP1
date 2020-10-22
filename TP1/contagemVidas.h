@@ -4,5 +4,6 @@
 #include "contagemVidas.c"
 
 void contagemVidas();
+void desenhaLegenda();
 
 #endif

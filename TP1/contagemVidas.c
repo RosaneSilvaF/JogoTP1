@@ -40,3 +40,28 @@ void contagemVidas(){
         glDisable(GL_TEXTURE_2D);
     
 }
+
+void desenhaLegenda(){
+        
+        glEnable(GL_TEXTURE_2D);
+        glBindTexture(GL_TEXTURE_2D, idTexturaLegenda);
+        glBegin(GL_TRIANGLE_FAN);
+
+                    
+            glTexCoord2f(0, 0);
+            glVertex3f(0, 600,  0);
+
+            glTexCoord2f(1, 0);
+            glVertex3f( 400, 600,  0);
+
+            glTexCoord2f(1, 1);
+            glVertex3f( 400,  650,  0);
+
+            glTexCoord2f(0, 1);
+            glVertex3f(0,  650,  0);
+                
+
+        glEnd();
+        glDisable(GL_TEXTURE_2D);
+    
+}

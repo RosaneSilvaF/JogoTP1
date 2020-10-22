@@ -24,4 +24,7 @@ void inicializa() {
     idTexturaVidas2 = carregaTextura("vidas2.png");
     idTexturaVidas3 = carregaTextura("vidas3.png");
     idTexturaAlgema = carregaTextura("algema.png");
+    idTexturaAperteI= carregaTextura("apertei.png");
+    idTexturaAperteI2= carregaTextura("apertei2.png");
+    idTexturaLegenda= carregaTextura("pausar.png");
 }

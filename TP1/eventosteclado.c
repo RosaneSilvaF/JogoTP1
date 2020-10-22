@@ -25,6 +25,11 @@ void teclado(unsigned char key, int x, int y) {
             }
             
         break;
+        case 105:
+        case 73:
+            inicia=1;
+        break;
+        
         case 112:
         case 80:
             if(pause==1)
@@ -36,6 +41,7 @@ void teclado(unsigned char key, int x, int y) {
         case 82:
             reinicializa();
         break;
+        
     }
 }
 

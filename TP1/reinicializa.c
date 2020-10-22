@@ -52,6 +52,7 @@ void reinicializa(){
 	vidas=3; 
 	acertouOLulinha = 0;
 	desenhadoGameOver=0;
+
 	for (int i = 0; i < 8; ++i)
 	{
 		ativo[i]=1;
