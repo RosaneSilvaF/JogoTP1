@@ -21,13 +21,14 @@ biblioteca, digite-a e aguarde. Após instalada a biblioteca o jogo irá rodar.
 	-Movimento dos inimigos não harmônico : Para não ser previsivel o local 
 						onde atirar. 
 	
-	-Musica de fundo : Adicionamos musica ao nosso jogo.
+	-Musica de fundo : Adicionamos musica ao nosso jogo e aos personagens.
 
 	-Menu : Antes do jogo iniciar há uma breve introdução, com título, comandos
 		e para iniciar o jogo, é necessário apertar " i ".
 
 	-Contagem de vidas : Caso você perca 3 vidas você perde o jogo.
 
-	-Botão de pause : Para pausar o jogo, basta apertar " p ".
+	-Botão de pause : Para pausar o jogo, basta apertar " p ". O pause funciona 
+			tanto para o jogo quanto para a musica
 
 	-Botão de restart : Para recomeçar o jogo, basta apertar " r ".
