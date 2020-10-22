@@ -6,6 +6,7 @@
 #include <SDL/SDL.h>
 #include "variaveisglobais.h"
 
+//funçao que execulta quando apertamos a letra 'r'
 void reinicializa(){
 	xVerticeSprite = 325;
 	yCaninha = 80;

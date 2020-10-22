@@ -3,6 +3,8 @@
 #include <GL/freeglut.h>
 #include <stdlib.h>
 #include <stdio.h>
+#include <SDL/SDL.h>
+#include <SDL/SDL_mixer.h>
 #include "desenhanave.h"
 #include "carregatextura.h"
 #include "redimensiona.h"

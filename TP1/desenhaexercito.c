@@ -13,6 +13,7 @@
 #define tamanhoLadoYSprite 50 //é retangular
 #define xSpriteAtual 0.1 //x para a seleção da imagem da sprite
 
+//colisão "nave"
 void abateLulinha(){
 
 	if(xVerticeSprite <= xTiroInimigo && xTiroInimigo <= xVerticeSprite+tamanhoLadoXSprite){
@@ -24,6 +25,8 @@ void abateLulinha(){
 	}
 	
 }
+
+//colisão inimigo
 void abateDeGado(){
 	for (int i = 0; i < 8; i++){
 		if(xVerticeGado[i] <= xCaninha && xCaninha <= xVerticeGado[i]+tamanhoLadoXSprite){
@@ -37,10 +40,10 @@ void abateDeGado(){
 		}
 
 	}	
-	// printf("\n");
 	
 }
 
+//Colisao inimigo fileira 2
 void abateDeGado2(){
 	for (int i = 0; i < 7; i++){
 		if(xVerticeGado[i]+xGado2 <= xCaninha && xCaninha <= xVerticeGado[i]+xGado2+tamanhoLadoXSprite){
@@ -54,15 +57,11 @@ void abateDeGado2(){
 		}
 		
 	}
-
-	// for (int i = 0; i < 8; i++){
-	// 	printf("%d \t",ativo[i]);
-	// }
-	// printf("\n");
-	
 	
 }
 
+
+//colisão inimigo fileira 3
 void abateDeGado3(){
 	for (int i = 0; i < 7; i++){
 		if(xVerticeGado[i]+xGado2 <= xCaninha && xCaninha <= xVerticeGado[i]+xGado2+tamanhoLadoXSprite){
@@ -76,14 +75,10 @@ void abateDeGado3(){
 		}
 		
 	}
-
-	// for (int i = 0; i < 8; i++){
-	// 	printf("%d \t",ativo[i]);
-	// }
-	// printf("\n");
-	
-	
+		
 }
+
+//funão que verifica o status inimigo/nave do jogo
 void continuar(){
 	int soma = 0;
 	for (int i = 0; i < 8; ++i){
@@ -106,12 +101,11 @@ void continuar(){
 	}
 }
 
+// desenha as naves (todas a fileiras)
 void desenhaExercito(){
 
-    //glEnable(GL_TEXTURE_2D);
-    //glBindTexture(GL_TEXTURE_2D, idTexturaGado);
 	for(int i=0; i<8;i++){
-    //glBegin(GL_POLYGON);
+
   	
 		if (ativo[i]){
 			glEnable(GL_TEXTURE_2D);
@@ -147,7 +141,6 @@ void desenhaExercito(){
     }
 
 	for(int i=0; i<7;i++){
-    //glBegin(GL_POLYGON);
   	
 		if (ativo2[i]){
 			glEnable(GL_TEXTURE_2D);
@@ -182,7 +175,6 @@ void desenhaExercito(){
 		  
     }
 	for(int i=0; i<7;i++){
-    //glBegin(GL_POLYGON);
   	
 		if (ativo3[i]){
 			glEnable(GL_TEXTURE_2D);
@@ -212,11 +204,7 @@ void desenhaExercito(){
 		for (int u = 0; u < 8; u++)
 		{
 			xVerticeGado[u]+=sinal3*2; 
-		}
-		
-		  
+		}  
     }
-
-    
     glDisable(GL_TEXTURE_2D);
 }

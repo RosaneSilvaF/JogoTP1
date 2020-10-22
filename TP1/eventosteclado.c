@@ -52,6 +52,7 @@ void teclado(unsigned char key, int x, int y) {
     }
 }
 
+//setas
 void especial(int key, int x, int y){
     switch (key){
         case GLUT_KEY_LEFT:

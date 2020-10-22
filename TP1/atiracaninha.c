@@ -1,6 +1,7 @@
 #include "atiracaninha.h"
 #include "variaveisglobais.h"
 
+//função atirar
 void atiraCaninha(){
     
 

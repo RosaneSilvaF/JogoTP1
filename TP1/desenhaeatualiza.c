@@ -13,7 +13,7 @@
 #include "desenhaTiroInimigo.h"
 #include "contagemVidas.h"
 
-
+//Atira a bala da "nave"
 void atira(){
     if(tiro){
         atiraCaninha();
@@ -29,6 +29,7 @@ void atira(){
     }
 }
 
+//Play musica
 void tocaMusica(){
     if(!Mix_PlayingMusic()){
         Mix_PlayMusic(music,-1);
@@ -38,6 +39,7 @@ void tocaMusica(){
 
 }
 
+//Função pause/resume
 void pausaMusica(int pause){
     if(pause==1)
         Mix_PauseMusic();
@@ -45,7 +47,7 @@ void pausaMusica(int pause){
         Mix_ResumeMusic();
 }
 
-
+// Função tiro inimigo
 void jogaTiroInimigo(){
 
     if(yTiroInimigo>0 && acertouOLulinha==0){
@@ -76,6 +78,7 @@ void jogaTiroInimigo(){
 
 }
 
+//Tela game over
 void gameOver(){
     
         glEnable(GL_TEXTURE_2D);
@@ -101,6 +104,7 @@ void gameOver(){
     
 }
 
+//tela ganhou
 void ganhou(){
     
         glEnable(GL_TEXTURE_2D);
@@ -126,6 +130,7 @@ void ganhou(){
     
 }
 
+//funçao desenha minha cena
 void desenha() {
 
     if(!inicia){
@@ -223,7 +228,7 @@ void desenha() {
 }
 
 
-
+//funçao aualiza minha cena
 void atualiza(int periodo) {
         
     glutPostRedisplay();

@@ -42,6 +42,7 @@ void contagemVidas(){
     
 }
 
+//desenha as legendas/vidas
 void desenhaLegenda(){
         
         glEnable(GL_TEXTURE_2D);
