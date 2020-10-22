@@ -33,7 +33,7 @@ void tocaMusica(){
     if(!Mix_PlayingMusic()){
         Mix_PlayMusic(music,-1);
         Mix_VolumeMusic(72);
-        //printf("volume is now : %d\n", Mix_VolumeMusic(-1));
+        //printf("volume is now : %d\n", Mix_VolumeMusic(-1)); //Verificar o volume
     }
 
 }
