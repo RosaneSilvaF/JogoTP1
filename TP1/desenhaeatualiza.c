@@ -3,6 +3,8 @@
 #include <GL/freeglut.h>
 #include <stdlib.h>
 #include <stdio.h>
+#include <SDL/SDL.h>
+#include <SDL/SDL_mixer.h>
 
 #include "desenhanave.h"
 #include "desenhaexercito.h"
@@ -10,6 +12,7 @@
 #include "desenhaeatualiza.h"
 #include "desenhaTiroInimigo.h"
 #include "contagemVidas.h"
+
 
 void atira(){
     if(tiro){
@@ -25,6 +28,15 @@ void atira(){
         }  
     }
 }
+
+void tocaMusica(){
+    if(!Mix_PlayingMusic()){
+        Mix_PlayMusic(music,-1);
+        Mix_VolumeMusic(96);
+        printf("volume is now : %d\n", Mix_VolumeMusic(-1));
+    }
+}
+
 
 void jogaTiroInimigo(){
 
@@ -202,16 +214,10 @@ void desenha() {
 
 
 
-
 void atualiza(int periodo) {
-    
         
-        glutPostRedisplay();
-        glutTimerFunc(33,atualiza,0);
+    glutPostRedisplay();
+    glutTimerFunc(33,atualiza,0);
         
-    
-
-    //else{
-        //tela ganhou companheiro
-    //}
 }
+

@@ -3,6 +3,7 @@
 #include <GL/freeglut.h>
 #include <stdlib.h>
 #include <stdio.h>
+#include <SDL/SDL.h>
 #include "desenhanave.h"
 #include "variaveisglobais.h"
 #include "atiracaninha.h"

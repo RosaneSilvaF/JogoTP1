@@ -1,1 +1,1 @@
-gcc TP1.c -lGL -lglut -lGLEW -lGLU -lSOIL
+gcc TP1.c -lGL -lglut -lGLEW -lGLU -lSOIL -lSDL -lSDL_mixer
