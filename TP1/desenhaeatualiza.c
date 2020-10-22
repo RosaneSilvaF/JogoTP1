@@ -35,6 +35,14 @@ void tocaMusica(){
         Mix_VolumeMusic(96);
         printf("volume is now : %d\n", Mix_VolumeMusic(-1));
     }
+
+}
+
+void pausaMusica(int pause){
+    if(pause==1)
+        Mix_PauseMusic();
+    else
+        Mix_ResumeMusic();
 }
 
 

@@ -33,10 +33,15 @@ void teclado(unsigned char key, int x, int y) {
         
         case 112:
         case 80:
-            if(pause==1)
+            if(pause==1){
                 pause=0;
-            else
+                pausaMusica(pause);
+            } 
+            else{
                 pause=1;
+                pausaMusica(pause);
+            }
+                
         break;
         case 114:
         case 82:
