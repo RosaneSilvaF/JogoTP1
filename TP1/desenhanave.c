@@ -10,7 +10,6 @@
 #define tamanhoLadoSprite 80 //o lado do quadrado q contem a sprite do personagem principal tem 80 de largura e altura.
 #define xSpriteAtual 0.1 //x para a seleção da imagem da sprite 
 
-float yVerticeSprite=10;
 
 void desenhaNave(){
     
