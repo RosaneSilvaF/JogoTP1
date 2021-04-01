@@ -1,5 +1,5 @@
 **Nome dos Integrantes :
-	Rosane Silva Freitas Araujo
+	Rosane Silva Freitas Araujo e 
 	Diego Simões Maria
 
 
