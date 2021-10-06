@@ -1,6 +1,9 @@
-## Nome dos Integrantes :
-	Rosane Silva Freitas Araujo e 
-	Diego Simões Maria
+<p align='center'>
+	<img src="https://raw.githubusercontent.com/RosaneSilvaF/JogoTP1/master/Screenshots/screenshot1.png"/>
+
+ #### Desenvolvedores :
+	- Rosane Silva Freitas Araujo
+	- Diego Simões Maria
 
 
 #### Para executar o jogo, entre em seu terminal (ubuntu) e digite : cd CG1/TP1
@@ -31,3 +34,4 @@ biblioteca, digite-a e aguarde. Após instalada a biblioteca o jogo irá rodar.
 			tanto para o jogo quanto para a musica
 
 	- Botão de restart : Para recomeçar o jogo, basta apertar " r ".
+</p>
